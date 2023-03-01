@@ -5,7 +5,7 @@ import { UserEntity } from '../user/user.entity';
 @Entity({ name: 'articles'})
 export class ArticleEntity {
     @PrimaryGeneratedColumn()
-    id: string;
+    id: number;
 
     @Column()
     slug: string;
