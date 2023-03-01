@@ -34,7 +34,7 @@ export class UserService {
             errorResponse.errors['username'] = 'has already been taken'
         }
         if (userByEmail || userByUsername) {
-            throw new HttpException('Email or username are taken', HttpStatus.UNPROCESSABLE_ENTITY)
+            throw new HttpException(errorResponse, HttpStatus.UNPROCESSABLE_ENTITY)
         }
         const newUser = new UserEntity()
         Object.assign(newUser, createUserDto)
